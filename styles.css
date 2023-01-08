@@ -1,6 +1,5 @@
-
 .outer-border{
-    width:800px; height:650px; padding:20px; text-align:center; border: 10px solid #673AB7;    margin-left: 21%;
+    width:800px; height:650px; padding:20px; text-align:center; border: 10px solid #673AB7;    
 }
 
 .inner-dotted-border{
