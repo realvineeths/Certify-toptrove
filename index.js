@@ -23,6 +23,10 @@ db.connect(function(err) {
   console.log('Connected to the MySQL server.');
 })
 
+app.get('/',(req,res)=>{
+  res.send('hello user');
+})
+
 app.get("/fileget", (req, res) => {
   const  file_name =req.body.file_name;
   console.log(file_name);
