@@ -85,7 +85,7 @@ app.post('/filestore',async (req,res)=>{
 
 });
 
-const port=process.env.port||8800
+const port=process.env.PORT ||8800
 app.listen(port,()=>{
   console.log(`server running on port number ${port}`);
 });
