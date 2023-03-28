@@ -10,10 +10,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 const db = mysql.createConnection({
-  host:"",
-  user:"",
-  password:"",
-  database:""
+  host:"database-1.cz4k2aulzdrl.ap-south-1.rds.amazonaws.com",
+  user:"admin",
+  password:"rootpass",
+  database:"toptrove"
 })//fill it up
 
 db.connect(function(err) {
@@ -21,6 +21,10 @@ db.connect(function(err) {
     return console.error('error: ' + err.message);
   }
   console.log('Connected to the MySQL server.');
+})
+
+app.get('/',(req,res)=>{
+  res.send('hello user');
 })
 
 app.get("/fileget", (req, res) => {
@@ -35,7 +39,7 @@ app.get("/fileget", (req, res) => {
     // console.log(Buffer.from(result[0].file_data).toString())
     fs.writeFileSync(`${file_name}.pdf`, Buffer.from(result[0].file_data))
     // res.send(pdf);
-    res.send('ok');
+    res.send(fs.writeFileSync(`${file_name}.pdf`, Buffer.from(result[0].file_data)));
   })
 });
 
@@ -85,10 +89,10 @@ app.post('/filestore',async (req,res)=>{
 
 });
 
-
-app.listen(8080,()=>{
-  console.log('server running on port number 8080');
-})
+const port=process.env.PORT ||8800
+app.listen(port,()=>{
+  console.log(`server running on port number ${port}`);
+});
 
 
 
