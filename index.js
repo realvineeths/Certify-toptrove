@@ -10,10 +10,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 const db = mysql.createConnection({
-  host:"database-1.cz4k2aulzdrl.ap-south-1.rds.amazonaws.com",
-  user:"admin",
-  password:"rootpass",
-  database:"toptrove"
+  host:"",
+  user:"",
+  password:"",
+  database:""
 })//fill it up
 
 db.connect(function(err) {
@@ -94,24 +94,6 @@ app.listen(port,()=>{
   console.log(`server running on port number ${port}`);
 });
 
-
-
-
-
-
-// var type = process.argv.slice(2)[0] || 'url';
-
-
-// if (type === 'url') {
-
-//   const website_url = 'https://vcint.github.io/nodeapi/';
-
-//   await page.goto(website_url, { waitUntil: 'networkidle0' });
-
-// } else if (type === 'file') {
-
-
-// } else {
 
 //   console.log(new Error(`HTML source "${type}" is unkown.`));
 //   await browser.close();
