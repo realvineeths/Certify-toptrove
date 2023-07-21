@@ -93,9 +93,3 @@ const port=process.env.PORT ||8800
 app.listen(port,()=>{
   console.log(`server running on port number ${port}`);
 });
-
-
-//   console.log(new Error(`HTML source "${type}" is unkown.`));
-//   await browser.close();
-//   return;
-// }
